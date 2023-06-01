@@ -7,12 +7,12 @@ algorithm for solving, and prioritise cells with fewer possibilities,
 but they differ in how they find those cells in the grid.
 
 ## First try
-The first (just called [sudoku](/sudoku)) uses a simple linear search,
+The [first](/sudoku) uses a simple linear search,
 and was easy to implement, but is very inefficient, as many cells are
 needlessly checked to see if they are the minimum.
 
 ## More optimal
-My second approach utilises a [dway heap](https://github.com/tim-de/odin-dway-heap)
+My [second approach](/heapdoku) utilises a [dway heap](https://github.com/tim-de/odin-dway-heap)
 as a priority queue to find the cell with the minimum number of options at
 each stage of the recursive algorithm.
 
