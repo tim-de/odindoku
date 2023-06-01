@@ -18,7 +18,7 @@ each stage of the recursive algorithm.
 
 ## Comparison
 When the two resulting programs are timed against one-another
-using the 50 sudoku puzzles contained in [/heapdoku/p096_sudoku.txt],
+using the 50 sudoku puzzles [here](/heapdoku/p096_sudoku.txt),
 heapdoku is around 4 times faster, and when solving an example
 [deigned to be hard for depth first search](https://en.wikipedia.org/wiki/File:Sudoku_puzzle_hard_for_brute_force.svg)
 the difference is even more pronounced, with the heap-based algorithm running
