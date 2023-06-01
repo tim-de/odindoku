@@ -1,3 +1,3 @@
 [submodule "dway_heap"]
 	path = dway_heap
-	url = ./dway_heap
+	url = https://github.com/tim-de/odin-dway-heap
