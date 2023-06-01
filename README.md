@@ -14,7 +14,9 @@ needlessly checked to see if they are the minimum.
 ## More optimal
 My [second approach](/heapdoku) utilises a [dway heap](https://github.com/tim-de/odin-dway-heap)
 as a priority queue to find the cell with the minimum number of options at
-each stage of the recursive algorithm.
+each stage of the recursive algorithm. By benchmarking I found that for this
+application the optimal branch factor was 4, with other branch factors being only
+slightly worse.
 
 ## Comparison
 When the two resulting programs are timed against one-another
