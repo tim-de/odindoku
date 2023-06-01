@@ -13,13 +13,6 @@ cell_compare :: proc(parent, child: ^SudokuCell) -> bool {
 	return card(child.options) < card(parent.options)
 }
 
-same_box :: proc(ai, aj, bi, bj: int) -> bool {
-	if ((ai / 3) == (bi / 3)) & ((aj / 3) == (bj / 3)) {
-		return (ai != bi) & (aj != bj)
-	}
-	return false
-}
-
 SudokuGrid :: [9][9]SudokuCell
 
 get_neighbour_position :: proc(i, j, n: int) -> (int, int) {
@@ -42,7 +35,7 @@ get_neighbour_position :: proc(i, j, n: int) -> (int, int) {
 		i_offset := (n - 16) / 2
 		j_offset := (n - 16) % 2
 
-		// Should probably make this a switch statement
+		// Should maybe make this a switch statement
 		if i % 3 == 0 do i_offset += 1
 		if i % 3 == 1 do i_offset *= 2
 
@@ -145,10 +138,8 @@ depth_first_search :: proc(heap: ^dway_heap.dwayHeap(^SudokuCell)) -> (ok: bool)
 			dway_heap.heapify(heap)
 			if depth_first_search(heap) do return true
 			cell.value = 0
-			//set_cell_options(cell)
 			for neighbour in changed_cells {
 				neighbour.options += {option}
-				//set_cell_options(neighbour)
 			}
 			dway_heap.heapify(heap)
 		}
